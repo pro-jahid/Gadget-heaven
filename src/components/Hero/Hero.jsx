@@ -23,7 +23,7 @@ import hero from '../../assets/Hero (4).png';
 const Hero = () => {
     return (
         <div className="relative">
-            <div className="container mx-auto bg-purple-600 text-center px-6 pt-[100px] pb-[260px] rounded-xl text-white mb-[250px]">
+            <div className="container mx-auto bg-purple-600 text-center px-6 pt-[100px] pb-[300px] rounded-xl text-white mb-[400px]">
                 <h1 className="text-5xl font-bold leading-tight">
                     Upgrade Your Tech, Accessorize with <br /> Gadget Heaven Accessories
                 </h1>
@@ -35,8 +35,8 @@ const Hero = () => {
                     Shop Now
                 </button>
             </div>
-            <div className="mt-10 flex justify-center absolute top-[400px] left-[400px]">
-                <img src={hero} alt="Gadget Heaven" className="rounded-lg shadow-lg w-3/4" />
+            <div className="mt-10 flex justify-center absolute top-[400px] left-[410px]">
+                <img src={hero} alt="Gadget Heaven" className="rounded-lg shadow-lg w-full" />
             </div>
         </div>
     );

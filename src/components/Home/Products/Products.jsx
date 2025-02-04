@@ -12,7 +12,7 @@ const Products = () => {
 
   return (
     <div className="container mx-auto">
-        <h1 className="text-center font-bold text-4xl py-12">Explore Cutting-Edge Gadgets</h1>
+        <h1 className="text-center font-bold text-4xl py-12 mb-6">Explore Cutting-Edge Gadgets</h1>
         <div className="flex">
       <div className="w-1/4 p-4 bg-gray-100 min-h-screen">
         <h2 className="text-xl font-bold mb-4">Categories</h2>

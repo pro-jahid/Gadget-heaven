@@ -54,10 +54,10 @@ const Header = () => {
 
           {/* Buttons (Cart & Wishlist) */}
           <div className="hidden md:flex space-x-4">
-            <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg transition">
+            <button className="bg-gray-200 hover:bg-gray-300 cursor-pointer text-gray-700 px-4 py-2 rounded-lg transition">
               🛒 Cart
             </button>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer px-4 py-2 rounded-lg transition">
               ❤️ Wishlist
             </button>
           </div>
