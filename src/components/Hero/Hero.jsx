@@ -24,7 +24,7 @@ const Hero = () => {
     return (
         <div className="relative">
             <div className="container mx-auto bg-purple-600 text-center px-6 pt-[100px] pb-[300px] rounded-xl text-white mb-[400px]">
-                <h1 className="text-5xl font-bold leading-tight">
+                <h1 className="md:text-5xl text-2xl font-bold leading-tight">
                     Upgrade Your Tech, Accessorize with <br /> Gadget Heaven Accessories
                 </h1>
                 <p className="mt-4 text-lg">

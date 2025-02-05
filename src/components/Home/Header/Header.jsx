@@ -1,54 +1,49 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   return (
-   
     <div>
       <nav className="bg-white shadow-md py-4 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo */}
           <div className="text-2xl font-bold text-gray-800">
-            <span className="text-blue-600">Gadget Heaven</span>
+            <Link to="/"><span className="text-blue-600">Gadget Heaven</span></Link>
           </div>
-
-          {/* Menu Button for MD Devices */}
           <button
             className="md:hidden text-gray-700 text-2xl focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? "✖" : "☰"}
           </button>
-
-          {/* Navbar Links (Hidden on small screens) */}
           <ul
             className={`md:flex space-x-8 text-gray-700 font-medium absolute md:static bg-white w-full md:w-auto left-0 top-16 md:top-auto py-4 md:py-0 px-6 md:px-0 shadow-md md:shadow-none transition-all duration-300 ${
               isOpen ? "block" : "hidden"
             }`}
           >
             <li>
-              <a
-                href="#"
+              <NavLink
                 className="block py-2 md:py-0 hover:text-blue-600 transition"
+                to="/"
               >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href="#"
+              <NavLink
                 className="block py-2 md:py-0 hover:text-blue-600 transition"
+                to="/"
               >
                 Statistics
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href="#"
+              <NavLink
                 className="block py-2 md:py-0 hover:text-blue-600 transition"
+                to="/dashboard"
               >
                 Dashboard
-              </a>
+              </NavLink>
             </li>
           </ul>
 

@@ -1,21 +1,21 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { addToStoredCardList } from "../Utilities/Utilities";
 
 const ProductDetails = () => {
     const products = useLoaderData();  // Load all products from products.json
     const { product_id } = useParams();
-    
-     // Get productId from URL
-
-    // Find the specific product by matching the productId
     const product = products.find((item) => item.product_id === product_id);
-
-    // If product is not found
+    
     if (!product) {
         return (
             <div className="text-center py-10 text-red-600 text-xl">
                 Product not found! 😢
             </div>
         );
+    }
+
+    const handleMarkAsRead = (id)=>{
+        addToStoredCardList(id)
     }
 
     return (
@@ -72,7 +72,7 @@ const ProductDetails = () => {
 
                         {/* Add to Cart Button */}
                        <div className="flex gap-8 items-center mb-3">
-                       <button className="bg-purple-600 text-white px-5 py-2 rounded-lg shadow-md hover:bg-purple-700 transition cursor-pointer">
+                       <button onClick={()=> handleMarkAsRead(product_id)} className="bg-purple-600 text-white px-5 py-2 rounded-lg shadow-md hover:bg-purple-700 transition cursor-pointer">
                             Add to Cart 🛒
                         </button>
                         <button className="text-2xl p-2 border rounded-full cursor-pointer">❤️</button>
