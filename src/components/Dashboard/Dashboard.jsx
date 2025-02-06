@@ -1,13 +1,27 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { getStoredCardList } from "../Utilities/Utilities";
+import { getStoredCardList, removeToStoredCardList } from "../Utilities/Utilities";
 import CartList from "../CartList/CartList";
+import { CartContext } from "../Route/Route";
 
 const Dashboard = () => {
+  // const {readList} = useContext(CartContext);
+  // console.log(readList);
+  
   const allBooks = useLoaderData();
   console.log(allBooks);
 
   const [readList, setReadList] = useState([]);
+
+  const handleRemoveCart = (id) => {
+    
+    removeToStoredCardList(id)
+    const storedCardList = getStoredCardList();
+    const cardList = allBooks.filter((book) =>
+      storedCardList.includes(book.product_id)
+    );
+    setReadList(cardList);
+  }
 
   useEffect(() => {
     const storedCardList = getStoredCardList();
@@ -59,7 +73,7 @@ const Dashboard = () => {
       </div>
       <div className="">
         {readList.map((product) => (
-          <CartList product={product} key={product.id}></CartList>
+          <CartList product={product} key={product.id} handleRemoveCart={handleRemoveCart}></CartList>
         ))}
       </div>
     </div>

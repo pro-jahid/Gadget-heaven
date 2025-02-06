@@ -1,6 +1,10 @@
+import { useEffect } from "react";
+import { removeToStoredCardList } from "../Utilities/Utilities";
+import { RxCross1 } from "react-icons/rx";
 
-
-const CartList = ({product}) => {
+const CartList = ({product, handleRemoveCart}) => {
+  
+  
   return (
     <div className="container mx-auto flex items-center justify-between p-6 mb-8 bg-gray-50 rounded-lg shadow-lg w-full">
     <div className="flex items-center space-x-6">
@@ -13,8 +17,8 @@ const CartList = ({product}) => {
         <p className="font-semibold text-md">Price: ${product.price}</p>
       </div>
     </div>
-    <button className="text-red-500 text-2xl">
-    ✖
+    <button onClick={ () => handleRemoveCart(product.product_id)} className="text-red-500 border rounded-full p-2">
+    <RxCross1 />
     </button>
   </div>
   );

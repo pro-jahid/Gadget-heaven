@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { getStoredCardList } from "../../Utilities/Utilities";
+import { IoCartOutline } from "react-icons/io5";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [totalCart, setTotalCart] = useState(0)
+
+  useEffect(() => {
+    const storedCardList = getStoredCardList();
+    setTotalCart(storedCardList.length);
+    
+  }, [])
   return (
     <div>
       <nav className="bg-white py-4 px-6 md:px-10">
@@ -60,11 +69,9 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
-
-          {/* Buttons (Cart & Wishlist) */}
           <div className="hidden md:flex space-x-4">
             <button className="border rounded-full hover:bg-gray-300 cursor-pointer text-gray-700 px-3 py-2.5 transition">
-              🛒 
+            <IoCartOutline /> {totalCart}
             </button>
             <button className="border rounded-full hover:bg-gray-300 cursor-pointer text-gray-700 px-3 py-2.5 transition">
               ❤️
