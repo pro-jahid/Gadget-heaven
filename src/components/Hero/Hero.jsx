@@ -1,22 +1,3 @@
-// import hero from '../../assets/Hero (4).png'
-
-// const Hero = () => {
-//     return (
-//         <div className="bg-purple-600 py-[200px] rounded-xl">
-//             <div className="container mx-auto text-center text-white">
-//             <h1 className="text-6xl text-center ">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
-//             <p>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
-//             <button>Shop now</button>
-//             </div>
-//             <div>
-//                 <img src={hero} alt="" />
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Hero;
-
 
 import hero from '../../assets/Hero (4).png';
 

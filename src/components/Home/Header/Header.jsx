@@ -5,10 +5,12 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <nav className="bg-white shadow-md py-4 px-6 md:px-10">
+      <nav className="bg-white py-4 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="text-2xl font-bold text-gray-800">
-            <Link to="/"><span className="text-blue-600">Gadget Heaven</span></Link>
+            <Link to="/">
+              <span className="text-blue-600">Gadget Heaven</span>
+            </Link>
           </div>
           <button
             className="md:hidden text-gray-700 text-2xl focus:outline-none"
@@ -23,7 +25,11 @@ const Header = () => {
           >
             <li>
               <NavLink
-                className="block py-2 md:py-0 hover:text-blue-600 transition"
+                className={({ isActive }) =>
+                  `block py-2 md:py-0 hover:text-blue-600 transition ${
+                    isActive ? "border-b-2 border-blue-600" : ""
+                  }`
+                }
                 to="/"
               >
                 Home
@@ -31,7 +37,11 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                className="block py-2 md:py-0 hover:text-blue-600 transition"
+                className={({ isActive }) =>
+                  `block py-2 md:py-0 hover:text-blue-600 transition ${
+                    isActive ? "border-b-2 border-blue-600" : ""
+                  }`
+                }
                 to="/rechart"
               >
                 Statistics
@@ -39,7 +49,11 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                className="block py-2 md:py-0 hover:text-blue-600 transition"
+                className={({ isActive }) =>
+                  `block py-2 md:py-0 hover:text-blue-600 transition ${
+                    isActive ? "border-b-2 border-blue-600" : ""
+                  }`
+                }
                 to="/dashboard"
               >
                 Dashboard
@@ -49,11 +63,11 @@ const Header = () => {
 
           {/* Buttons (Cart & Wishlist) */}
           <div className="hidden md:flex space-x-4">
-            <button className="bg-gray-200 hover:bg-gray-300 cursor-pointer text-gray-700 px-4 py-2 rounded-lg transition">
-              🛒 Cart
+            <button className="border rounded-full hover:bg-gray-300 cursor-pointer text-gray-700 px-3 py-2.5 transition">
+              🛒 
             </button>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer px-4 py-2 rounded-lg transition">
-              ❤️ Wishlist
+            <button className="border rounded-full hover:bg-gray-300 cursor-pointer text-gray-700 px-3 py-2.5 transition">
+              ❤️
             </button>
           </div>
         </div>
