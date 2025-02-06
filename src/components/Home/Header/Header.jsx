@@ -32,7 +32,7 @@ const Header = () => {
             <li>
               <NavLink
                 className="block py-2 md:py-0 hover:text-blue-600 transition"
-                to="/"
+                to="/rechart"
               >
                 Statistics
               </NavLink>

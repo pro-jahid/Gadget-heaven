@@ -11,6 +11,7 @@ import Home from './components/Home/Home';
 import Route from './components/Route/Route';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Dashboard from './components/Dashboard/Dashboard';
+import ReChart from './components/ReChart/ReChart';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         path:'/dashboard',
         element:<Dashboard></Dashboard>,
         loader:()=> fetch('/products.json')
+      },
+      {
+        path:'/rechart',
+        element:<ReChart></ReChart>
       }
     ]
   },
