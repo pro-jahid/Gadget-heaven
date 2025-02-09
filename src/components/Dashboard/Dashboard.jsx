@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+
 import { useLoaderData } from "react-router-dom";
 import { getStoredCardList, removeToStoredCardList } from "../Utilities/Utilities";
 import CartList from "../CartList/CartList";
-import { CartContext } from "../Route/Route";
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
-  // const {readList} = useContext(CartContext);
-  // console.log(readList);
   
   const allBooks = useLoaderData();
   console.log(allBooks);
